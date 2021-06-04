@@ -4,9 +4,7 @@ const select2 = document.querySelector('.exchange-currency-select2')
 const input1 = document.querySelector('.exchange-currency-input1')
 const input2 = document.querySelector('.exchange-currency-input2')
 const swapBtn = document.querySelector('.exchange-swap-btn')
-const curr = document.querySelector('.curr')
-const exAmt = document.querySelector('.ex-amt')
-const exCurr = document.querySelector('.ex-curr')
+const singleCur = document.querySelector('.single-container')
 
 // Store
 const store = {
@@ -48,7 +46,6 @@ const handleGetRateData = () => {
       console.log(error)
     })
 }
-
 // Get currencies for selection
 const getCurrencySelections = async () => {
   getCurrencies()
@@ -80,9 +77,9 @@ const getSingleUnit = async (currency1, currency2) => {
 const handleSingleUnit = () => {
   getSingleUnit(store.selected1, store.selected2)
     .then(response => {
-      curr.innerHTML = store.selected1
-      exAmt.innerHTML = response.conversion_result
-      exCurr.innerHTML = store.selected2
+      if (store.selected1 && store.selected2) {
+        singleCur.innerHTML = `<p>1 ${store.selected1} = ${response.conversion_result} ${store.selected2}`
+      }
     })
     .catch(error => {
       console.log(error)

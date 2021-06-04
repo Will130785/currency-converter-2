@@ -1,7 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
 .exchange {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.exchange-head {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exchange-head img {
+  height: 5rem;
+  margin: 3rem 0;
+}
+
+.exchange-body select {
+  background: none;
+  padding: 1rem;
+  border: 1px solid rgb(226, 92, 92);
+}
+
+.exchange-body input {
+  padding: 1rem;
+  border: 1px solid rgb(226, 92, 92);
+}
+
+.exchange-swap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.exchange-swap-btn {
+  background: none;
+  padding: 1rem;
+  border: 1px solid rgb(226, 92, 92);
+}
+
+.single-container {
+  font-size: 1.4rem;
 }
